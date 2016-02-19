@@ -1,0 +1,7 @@
+<div class="col-md-8">
+  <h1>Blog (Count {{blogs.length}})</h1>
+  <blog-form></blog-form>
+  <div *ngFor="#blog of blogs">
+    <blog [model]="blog"></blog>
+  </div>
+</div>
