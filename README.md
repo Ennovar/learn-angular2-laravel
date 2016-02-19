@@ -4,4 +4,6 @@
 - laravel
 - node
 - angularjs2 (check package.json)
+- chrome
+- chrome Cors extension
 - idk what else... but there is probably more (this was a nightmare of prerequisites)
