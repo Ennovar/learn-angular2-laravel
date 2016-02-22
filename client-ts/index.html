@@ -4,8 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <!-- IE required polyfills, in this exact order -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,900italic,900,700italic,700,400italic' rel='stylesheet' type='text/css'>    <!-- IE required polyfills, in this exact order -->
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
@@ -17,19 +16,28 @@
     <script>
       System.config({
         packages: {
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
+          build: {
+            src: {
+              format: 'register',
+              defaultExtension: 'js'
+            }
           }
         }
       });
-      System.import('app/main')
+      System.import('build/src/main')
             .then(null, console.error.bind(console));
     </script>
   </head>
   <body>
     <my-app>loading...</my-app>
     <script src="node_modules/angular2/bundles/http.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    $('#createBlog').on('shown.bs.modal', function () {
+      $('#createBlog').focus()
+    });
+    </script>
   </body>
 
 </html>

@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 // No use to include create and edit because they do not effect the datasets or get any data back (used as a form request)
-Route::resource('blogs', 'BlogController', ['except' => ['create', 'edit']]);
+Route::resource('blogs', 'BlogController', ['except' => ['create', 'edit'], 'middleware' => 'cors']);
 
 /*
 |--------------------------------------------------------------------------

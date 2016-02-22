@@ -7,19 +7,21 @@ import 'rxjs/Rx';
 @Injectable()
 export class BlogService {
   constructor (private http: Http) {}
-
-  private _blogUrl = 'http://localhost:8000/blogs/';
+// Development url
+  // private _blogUrl = 'http://localhost:8000/blogs/';
+  // Published Api url
+  private _blogUrl = 'http://laravel-blog-api.herokuapp.com/blogs';
   // Get all of the blogs
   getAll () {
-    return this.http.get(this._blogUrl).map(res => res.json()).catch(this.handleError);
+    return this.http.get(this._blogUrl).map(res => res.json().reverse()).catch(this.handleError);
   }
   // Get blog by id
   getById(id){
-    return this.http.get(this._blogUrl + id).map(res => res.json()).catch(this.handleError);
+    return this.http.get(this._blogUrl + "/" + id).map(res => res.json()).catch(this.handleError);
   }
   // Delete blog by id
   deleteById(id){
-    return this.http.delete(this._blogUrl + id).map(res => res.json()).catch(this.handleError);
+    return this.http.delete(this._blogUrl + "/" + id).map(res => res.json()).catch(this.handleError);
   }
   create(blog){
     var headers = new Headers();
@@ -34,7 +36,6 @@ export class BlogService {
     console.log("error on request");
     // in a real world app, we may send the server to some remote logging infrastructure
     // instead of just logging it to the console
-    console.error(error);
-    return Observable.throw(error.json().error || 'Server error');
+    return Observable.throw('Server error');
   }
 }

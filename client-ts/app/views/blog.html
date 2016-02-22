@@ -1,5 +1,10 @@
-<div class="">
-  <h2>{{model.title}}</h2>
-  <p>{{model.text}}</p>
-  <button (click)="deleteClicked($event)">Delete</button>  
+<!-- I should change this to use router links.... -->
+<div class="card">
+  <div *ngIf="model">
+    <a href="/{{model.id}}">
+      <h2>{{model.title}}</h2>
+    </a>
+    <p>{{model.text}}</p>
+  </div>
+  <button class="btn btn-default" (click)="deleteClicked($event)">Delete</button>
 </div>

@@ -5,6 +5,7 @@ import {BlogFormComponent} from './blogform.component';
 @Component({
     templateUrl: 'app/views/bloglist.html',
     directives: [BlogComponent, BlogFormComponent],
+    styleUrls: ['app/views/css/bloglist.css']
 })
 export class BlogListComponent implements OnInit {
   blogs = [];
