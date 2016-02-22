@@ -14,7 +14,7 @@
 - client-ts -> Typescript version (recommended)
 
 ## Getting Started
-### Api
+### Api (Laravel)
 *Initial Setup*
 - To run the API you must have all the above installed and ready to go.
 - Mysql must also be installed, it is also helpful to install the toolbench that comes with it. The toolbench will let you view data and your table structures.
@@ -35,3 +35,50 @@ connect to the local port that is configured for mysql and use the toolbench to 
 
 *Should Work To Start Server*
 > php artisan serve # start server
+
+### Client (Angular 2)
+*NOTE: Angularjs 2 apps can be written in js or typescript although typscript is better documented*
+
+*Inital Setup*
+- To run the client you must have all the above installed and ready to go.
+- Installing angular is as simple as installing some node packages
+**Example package.json for a simple angular app**
+
+```
+ {
+  "name": "angular2-quickstart",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "npm run typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
+    "typings" : "typings"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "angular2": "2.0.0-beta.6",
+    "systemjs": "0.19.20",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "zone.js": "0.5.14"
+  },
+  "devDependencies": {
+    "concurrently": "^1.0.0",
+    "lite-server": "^2.0.1",
+    "typescript": "^1.7.5",
+    "typings":"^0.6.8"
+  }
+}
+```
+> npm install # make sure you are in the client-ts directory of the project
+
+this will start chrome and show the app on port 3000
+
+
+### Reporting Errors
+- create an issue if this tutorial misses steps -> fixing it and creating a pull request would be even better
+- create an issue if something needs explained better
